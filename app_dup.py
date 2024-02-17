@@ -4,11 +4,6 @@ from chat import get_response
 
 app = Flask(__name__)
 
-# Connect to MongoDB
-client = MongoClient('mongodb+srv://abhishek:Abhishek@#123@cluster0.tgigfn2.mongodb.net/')
-db = client['MedipedChatbot']
-collection = db['Chatbot']
-
 @app.route('/', methods=['GET'])
 def index_get():
     return render_template('base.html')
@@ -21,12 +16,6 @@ def predict():
 
     message = {"answer": response}
     # Store chat data in MongoDB
-    chat_data = {
-    'user_message': text,
-    'bot_response': response
-    }
-    collection.insert_one(chat_data)
-    
     return jsonify(message)
 
 if __name__ == "__main__":
