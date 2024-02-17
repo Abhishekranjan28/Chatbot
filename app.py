@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-from pymongo import MongoClient
 from chat import get_response
 
 app = Flask(__name__)
