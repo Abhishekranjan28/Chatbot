@@ -5,7 +5,7 @@ from chat import get_response
 app = Flask(__name__)
 
 # Connect to MongoDB
-client = MongoClient('mongodb+srv://abhishek:<Abhishek@#123>@cluster0.tgigfn2.mongodb.net/')
+client = MongoClient('mongodb+srv://abhishek:Abhishek@#123@cluster0.tgigfn2.mongodb.net/')
 db = client['MedipedChatbot']
 collection = db['Chatbot']
 
